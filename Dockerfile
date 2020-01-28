@@ -1,6 +1,6 @@
 # see hooks/build and hooks/.config
-ARG BASE_IMAGE_PREFIX
-FROM ${BASE_IMAGE_PREFIX}alpine
+ARG BASE_IMAGE_PLATFORM
+FROM --platform=linux/${BASE_IMAGE_PLATFORM} alpine
 
 # see hooks/post_checkout
 ARG ARCH

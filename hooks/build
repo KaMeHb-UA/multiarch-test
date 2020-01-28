@@ -8,9 +8,9 @@ for arch in ${build_architectures[@]}; do
   echo "✅ building $arch"
   echo "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
 
-  BASE_IMAGE_PREFIX="${base_image_prefix_map[${arch}]}"
+  BASE_IMAGE_PLATFORM="${base_image_platform_map[${arch}]}"
   docker build \
-    --build-arg BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX} \
+    --build-arg BASE_IMAGE_PLATFORM=${BASE_IMAGE_PLATFORM} \
     --build-arg ARCH=${arch} \
     --file $DOCKERFILE_PATH \
     --tag "${DOCKER_REPO}:${CACHE_TAG}-${arch}"  \
